@@ -1,0 +1,178 @@
+body{
+    text-align: center;
+    font-family: Ubuntu;
+
+}
+section{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.intro{
+	text-align: center;
+	color : white;
+	background-image: url(../img/mountains.jpg);
+	background-size: cover;
+    background-attachment: fixed;
+	min-height: 100vh;
+	text-shadow: 2px 2px 2px  #000;
+    padding-top: 
+}
+.darkIntro{
+    background-color: rgba(0, 0, 0, 0.2);
+    min-height: 100vh;
+    padding: 5% 0;
+    margin-bottom: -50px;
+}
+.title{
+    font-size: 100px;
+}
+
+
+
+.myClass1{
+    background-color: #333;
+    color: white;
+	min-height: 100vh;
+}
+.projets{
+	text-align: center;
+	color : white;
+	background-image: url(../img/spiral.jpg);
+	background-size: cover;
+    background-attachment: fixed;
+	min-height: 100vh;
+}
+.darkProjets{
+    background-color: rgba(0, 0, 0, 0.2);
+    min-height: 100vh;
+    padding: 5% 0;
+    margin: -50px 0px;
+
+}
+.aptitudes{
+    padding-top: 50px;
+	text-align: center;
+	background-color: #333;
+    color: white;
+	min-height: 100vh;
+    line-height: 200%;
+}
+.temp{
+    color: #aaa;
+    line-height: 170%;
+}
+
+.parcours{
+    padding-top: 50px;
+    text-align: center;
+    background-image: url(../img/surface.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+
+}
+.navbar-brand{
+    font-size: 40px;
+}
+
+.backgroundCol{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+.titleMid{
+        padding: 10% 0;
+}
+hr {
+     color: white;
+     background-color: white; 
+     width: 100px; 
+     height: 5px;
+}
+.vLigne{
+    margin-left: -50px;
+    border-left: 1px solid black;
+}
+
+
+/*progress bar and progress table */
+.progressBar{
+    height: 20px;
+    border-radius: 5px;
+    background-color: #444;
+}
+.progress80{
+    height: 100%;
+    width: 80%;
+    background-color: #6699cc;
+    border-radius: 5px;
+
+}
+.progress60{
+    height: 100%;
+    width: 60%;
+    background-color: #6699cc;
+    border-radius: 5px;
+
+}
+.progress40{
+    height: 100%;
+    width: 40%;
+    background-color: #6699cc;
+    border-radius: 5px;
+
+}
+.progress50{
+    height: 100%;
+    width: 50%;
+    background-color: #6699cc;
+    border-radius: 5px;
+
+}
+.progress20{
+    height: 100%;
+    width: 20%;
+    background-color: #6699cc;
+    border-radius: 5px;
+
+}
+.skillTable{
+    border-collapse: separate;
+    border-spacing: 0px 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+.titleProgressBar{
+    padding: 10px 10px;
+    background-color: #66cc99;
+    border: 1px solid #39ac73;
+    border-radius: 5px;
+    color: white;
+    position: relative; 
+    margin: 10px 10px;
+}
+td.skillTitle{
+    vertical-align: middle;
+    margin: 10px 10px 10px 10px;
+    padding: 0px 10px;
+    background-color: #eee;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    vertical-align: middle;
+    display: table-cell;
+}
+td.skillBar{
+    vertical-align: middle;
+    margin: 10px 10px 10px 10px;
+    padding: 0px 10px;
+    background-color: #eee;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    vertical-align: middle;
+    display: table-cell;
+    width: 70%;
+}
+
+
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+      <head>
+           <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen" /> 
+           <link rel="stylesheet" type="text/css" href="css/css.css" media="screen" /> 
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+	$(document).ready(function() {
+		$('.js-scrollTo').on('click', function() { // Au clic sur un élément
+			var page = $(this).attr('href'); // Page cible
+			var speed = 750; // Durée de l'animation (en ms)
+			$('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+			return false;
+		});
+	});
+    </script>
+          <meta charset="UTF-8">
+      </head>
+      <body>
+           <!-- La barre de navigation -->
+    <nav class="navbar  navbar-default navbar-fixed-top" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <p class="navbar-text navbar-left"><b>Documentation Technique</b></p>              
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Acceuil</a>
+                    </li>
+                    <li>
+                        <a href="fonctionnalites.html">Fonctionnalités</a>
+                    </li>
+                    <li>
+                        <a href="technologies.html">Technologies</a>
+                    </li>
+                    <li>
+                        <a href="architecture.html">Architecture</a>
+                    </li>
+                    <li>
+                        <a href="prerequis.html">Prérequis</a>
+                    </li>
+                    <li>
+                        <a href="classes.html">Classes</a>
+                    </li>
+                    <li class="active">
+                        <a href="retour.html">Retour sur experience</a>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+    </nav>
+          <div class="titrePrincipal">
+          <div class="container">
+            <div class="row">
+                    <h1>Retour sur experience</h1>
+                    <h2>Témoignage des auteurs du projet</h2>
+                    <a class="btn btn-primary btn-lg js-scrollTo"  href="#temoignage" role="button">En savoir plus<br><span class="glyphicon glyphicon-chevron-down"/></a>
+            </div>
+          </div>
+          </div>
+          <div class="temoignage" id="temoignage">
+            <div class="container">
+                <div class="row">
+                    <h1>Témoignage de Florian Le Merle</h1>
+                    <h2>Option SISR</h2>
+                    <div class="col-lg-8">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                        Ce projet m'a permis de découvrir comment peuvent se développer des applications et notamment celles qui reçoivent et envoient des flux sur internet. Ce projet était essentiellement basé sur du développement ce qui a été dommage pour moi qui ne suis pas réellement intéressé dans cet aspect de l'informatique .Malgré cela, ce projet fut intéressant pour son aventure dans le monde de la conception d'applications.
+                        </div>
+                    </div>
+                    </div>
+                </div>  
+                <div class="row">
+                    <h1>Témoignage de Aygalic Jara--Mikolajczak</h1>
+                    <h2>Option SLAM</h2>
+                    <div class="col-lg-8">
+
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            Ce projet m'a permis de mettre en application les notions étudiées en cours, tout en élargissant mon panel de compétence grâce a mes nombreuses recherches. C'est un bon projet de fin d'année dans le sens ou il vient compléter les trous apporté par le manque d'inconnu des TD classiques. Nous avions beaucoup plus de liberté dans nos choix en matière de développement. La finalité m'apporte une grande satisfaction. Malheureusement mon équipier n'ayant pas suffisamment de connaissance en la matière n'a pas pu participer au développement comme il aurait voulu, par soucis d'efficacité dans le temps.  
+                            <br>Au final ce projet était quand meme un vrai défi pour moi et je suis fier de son aboutissement.
+                        </div>
+                    </div>
+                    </div>
+                </div>  
+            </div>
+          
+          
+          
+          </div>
+              <footer class="footer footer-dark">
+      <div class="container">
+        <h2>Projet BTS SIO - Chat IRC</h2>
+          <h3>SI56 Premiere année</h3>
+          <h2>Auteurs : Florian Le Merle et Aygalic Jara--Mikolajczak</h2>
+      </div>
+    </footer>
+      </body>
+</html>

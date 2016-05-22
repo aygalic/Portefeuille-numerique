@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+      <head>
+           <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen" /> 
+           <link rel="stylesheet" type="text/css" href="css/css.css" media="screen" /> 
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+	$(document).ready(function() {
+		$('.js-scrollTo').on('click', function() { // Au clic sur un élément
+			var page = $(this).attr('href'); // Page cible
+			var speed = 750; // Durée de l'animation (en ms)
+			$('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+			return false;
+		});
+	});
+    </script>
+          <meta charset="UTF-8">
+      </head>
+      <body>
+           <!-- La barre de navigation -->
+    <nav class="navbar  navbar-default navbar-fixed-top" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <p class="navbar-text navbar-left"><b>Documentation Technique</b></p>              
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Acceuil</a>
+                    </li>
+                    <li>
+                        <a href="fonctionnalites.html">Fonctionnalités</a>
+                    </li>
+                    <li class="active">
+                        <a href="technologies.html">Technologies</a>
+                    </li>
+                    <li>
+                        <a href="architecture.html">Architecture</a>
+                    </li>
+                    <li>
+                        <a href="prerequis.html">Prérequis</a>
+                    </li>
+                    <li>
+                        <a href="classes.html">Classes</a>
+                    </li>
+                    <li>
+                        <a href="retour.html">Retour sur experience</a>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+    </nav>
+          <div class="titrePrincipal">
+          <div class="container">
+            <div class="row">
+                    <h1>Technologies Utilisée</h1>
+                    <h2></h2>
+                    <a class="btn btn-primary btn-lg js-scrollTo" href="#technologies" role="button">En savoir plus<br><span class="glyphicon glyphicon-chevron-down"/></a>
+            </div>
+          </div>
+          </div>
+          <div class="technologies" id="technologies">
+          <div class="container">
+            <div class="row">
+                <h1>Technologies Utilisées</h1>
+                <div class="thumbnail">
+                    <img src="img/logojavafx.jpg" alt="...">
+                    <div class="caption">
+                        <h3>JavaFX 8</h3>
+                        <h4>API JavaFX basé sur Java 1.8</h4>
+                        Cet API permet de créer des interface utilisateur rapidement et facilement.<br>
+                        Il s'adresse aussi bien au développeur qu'au designer et à pour intérêt d'être multi plateforme. En effet ces application peuvent aussi bien être utilisées sur n'importe quel OS de bureau (Windows, Linux, OsX...) que sur des terminaux mobiles ou encore en application web. JavaFX prends aussi en charge le CSS et l'XML qui sont deux langages lié avec l'expérience utilisateur.
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="img/css3-logo.jpg" alt="...">
+                    <div class="caption">
+                        <h3>CSS3 3</h3>
+                        Ce langage est très connu des designer, il permet de mettre en forme les éléments graphiques<br>
+                        Habituellement utilisé avec HTML5, le css permet ici de modifier, d'améliorer l'interface utilisateur en changeant leur propriétés graphiques 
+                        
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+              <footer class="footer footer-dark">
+      <div class="container">
+        <h2>Projet BTS SIO - Chat IRC</h2>
+          <h3>SI56 Premiere année</h3>
+          <h2>Auteurs : Florian Le Merle et Aygalic Jara--Mikolajczak</h2>
+      </div>
+    </footer>
+      </body>
+</html>
