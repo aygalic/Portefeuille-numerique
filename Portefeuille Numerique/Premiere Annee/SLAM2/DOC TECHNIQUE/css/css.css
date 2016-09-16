@@ -1,0 +1,46 @@
+body{
+    padding-top: 50px;
+}
+.titrePrincipal{
+    height: 100vh;
+    width: 100%;
+    padding: 10% 0%;
+    text-align: center;
+    background-image: url(../img/Titre.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+h1{
+    font-size: 70px;
+}
+.architecture{
+    padding-top: 50px;
+}
+.index{
+    padding-top: 50px;
+    padding-bottom: 20vh;
+}
+.prerequis{
+    padding-top: 50px;
+}
+.technologies{
+    padding-top: 50px;
+}
+.fonctionnalites{
+    padding-top: 50px;
+}
+.classes{
+    padding-top: 50px;
+}
+.retour{
+    padding-top: 50px;
+}
+.btn-fat{
+    font-size: 50px;
+    text-align: center;
+}
+.footer-dark{
+    background-color: #eee;
+}

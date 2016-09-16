@@ -1,0 +1,26 @@
+.facture-header{
+    border: 2px solid #0275d8;
+    color:#0275d8;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 10px;
+}
+.facture-footer{
+    padding: 10px 10px 0px 10px;
+}
+hr.facture{
+    background-color:#0275d8;
+    width: 50%;
+    margin-left: 50%;
+    height: 3px;
+}
+div.date{
+    display: inline-block;
+    float: right;
+    text-align: right;
+    clear: both;
+}
+div.num-facture{
+    display: inline-block;
+    clear: both;
+}

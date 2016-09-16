@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+      <head>
+           <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen" /> 
+           <link rel="stylesheet" type="text/css" href="css/css.css" media="screen" /> 
+          <meta charset="UTF-8">
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+	$(document).ready(function() {
+		$('.js-scrollTo').on('click', function() { // Au clic sur un élément
+			var page = $(this).attr('href'); // Page cible
+			var speed = 750; // Durée de l'animation (en ms)
+			$('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+			return false;
+		});
+	});
+    </script>
+      </head>
+      <body>
+           <!-- La barre de navigation -->
+    <nav class="navbar  navbar-default navbar-fixed-top" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <p class="navbar-text navbar-left"><b>Documentation Technique</b></p>              
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Acceuil</a>
+                    </li>
+                    <li>
+                        <a href="fonctionnalites.html">Fonctionnalités</a>
+                    </li>
+                    <li>
+                        <a href="technologies.html">Technologies</a>
+                    </li>
+                    <li>
+                        <a href="architecture.html">Architecture</a>
+                    </li>
+                    <li class="active">
+                        <a href="prerequis.html">Prérequis</a>
+                    </li>
+                    <li>
+                        <a href="classes.html">Classes</a>
+                    </li>
+                    <li>
+                        <a href="retour.html">Retour sur experience</a>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+    </nav>
+          <div class="titrePrincipal">
+          <div class="container">
+            <div class="row">
+                    <h1>Prérequis</h1>
+                    <h2></h2>
+                    <a class="btn btn-primary btn-lg js-scrollTo" href="#prerequis" role="button">En savoir plus<br><span class="glyphicon glyphicon-chevron-down"/></a>
+            </div>
+          </div>
+          </div>
+          <div class="prerequis" id="prerequis">
+            <div class="container">
+                <div class="row">
+                    <h1>Prérequis</h1>
+                    <div class="thumbnail">
+                    <img src="img/logojava.jpg" alt="...">
+                    <div class="caption">
+                        <h3>JRE 8</h3>
+                        Pour faire fonctionner l'application vous avez besoin de la java runtime environement dans sa version 8 minimum.<br>
+                        A jour de préférence.
+                        
+                    </div>
+                </div>
+                    <div class="thumbnail">
+                    <img src="img/internetlogo.png" alt="...">
+                    <div class="caption">
+                        <h3>Connexion Internet</h3>
+                        Le protocole Internet Chat Relay a besoin d'être connecté a internet pour fonctionner.<br> A moins que votre serveur IRC soit héberger sur votre réseau local.
+                        
+                    </div>
+                </div>
+                </div> 
+            </div>
+          </div>
+              <footer class="footer footer-dark">
+      <div class="container">
+        <h2>Projet BTS SIO - Chat IRC</h2>
+          <h3>SI56 Premiere année</h3>
+          <h2>Auteurs : Florian Le Merle et Aygalic Jara--Mikolajczak</h2>
+      </div>
+    </footer>
+      </body>
+</html>

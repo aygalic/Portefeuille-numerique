@@ -1,0 +1,82 @@
+body{
+    text-align: center;
+    font-family: Ubuntu;
+
+}
+section{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.intro{
+    padding-top: 10%;
+    text-align: center;
+    color : #333;
+    background-image: url(../img/mountain.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    //text-shadow: 2px 2px 2px  #000;
+}
+
+.title{
+    font-size: 100px;
+}
+.myClass1{
+    background-color: #333;
+    color: white;
+    min-height: 100vh;
+}
+.projets{
+    //text-align: center;
+    color : white;
+    background-image: url(../img/bridge.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    text-shadow: 2px 2px 2px  #000;
+
+}
+.aptitudes{
+    padding-top: 50px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    min-height: 100vh;
+    line-height: 200%;
+}
+.navbar-brand{
+    font-size: 40px;
+}
+.tableau-synthese{
+    min-height: 100vh;
+}
+.sectionProjet{
+    background-color:white;
+    color:#333;
+    margin: 2% 0 0 0;
+    text-shadow: none;
+    text-align: left;
+
+}
+.miniature{
+    max-height: 20vh;
+}
+.veille-technologique{
+    min-height: 100vh;
+}
+.table-veille{
+    line-height: 200%;
+}
+
+.img-ara{
+    background-image: url(../img/Project_Ara.png);
+    background-attachment: fixed;
+    min-height: 50vh;
+    min-width: 100vw;
+    background-size: cover;
+}
+footer{
+    padding: 50px;
+    background-color: #333;
+    color : #eee;
+}

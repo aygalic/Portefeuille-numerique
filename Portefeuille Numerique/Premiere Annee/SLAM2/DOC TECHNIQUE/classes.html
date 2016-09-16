@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+      <head>
+           <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen" /> 
+           <link rel="stylesheet" type="text/css" href="css/css.css" media="screen" /> 
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+	$(document).ready(function() {
+		$('.js-scrollTo').on('click', function() { // Au clic sur un élément
+			var page = $(this).attr('href'); // Page cible
+			var speed = 750; // Durée de l'animation (en ms)
+			$('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+			return false;
+		});
+	});
+    </script>
+          <meta charset="UTF-8">
+      </head>
+      <body>
+           <!-- La barre de navigation -->
+    <nav class="navbar  navbar-default navbar-fixed-top" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <p class="navbar-text navbar-left"><b>Documentation Technique</b></p>              
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Acceuil</a>
+                    </li>
+                    <li>
+                        <a href="fonctionnalites.html">Fonctionnalités</a>
+                    </li>
+                    <li>
+                        <a href="technologies.html">Technologies</a>
+                    </li>
+                    <li>
+                        <a href="architecture.html">Architecture</a>
+                    </li>
+                    <li>
+                        <a href="prerequis.html">Prérequis</a>
+                    </li>
+                    <li class="active">
+                        <a href="classes.html">Classes</a>
+                    </li>
+                    <li>
+                        <a href="retour.html">Retour sur experience</a>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+    </nav>
+          <div class="titrePrincipal">
+          <div class="container">
+            <div class="row">
+                    <h1>Organisation du code</h1>
+                    <h1>Choix Technique</h1>
+                    <h2>Presentation des différentes classes et explication de leur fonctionnement</h2>
+                    Les getters et setters ne sont pas documentés<br>
+                    <a class="btn btn-primary btn-lg  js-scrollTo" href="#classes" role="button">En savoir plus<br><span class="glyphicon glyphicon-chevron-down"/></a>
+            </div>
+            </div>
+              </div>
+          <div class="classes" id="classes">
+              <div class="container">
+            <div class="row">
+                <h1>Organisation du code</h1>
+                <h2>Fenetre Principale</h2>
+                <p>FenetrePrincipale est la classe qui contient tout les élement graphique, ainsi que leurs interactions avec les autres classes et le serveur. Tout les élement JavaFX sont créés içi  
+                Les éléments principaux sont expliqués ci dessous:
+                </p>
+                <hr>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                        Runnable readingRunnable = new Runnable() {/*UN PAQUET DE CODE*/}<br>
+                        ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);<br>
+                        executor.scheduleAtFixedRate(readingRunnable, 0, 10, TimeUnit.MILLISECONDS);
+                    </div>
+                </div>
+                <p>Contien la fonction qui actualise en permanence le retour du serveur et effectue différentes action en fonction de ce dernier :</p>
+                <ul>
+                    <li>
+                        mettre fin a l'écran de chargement
+                    </li>
+                    <li>
+                        Mettre en forme le message
+                    </li>
+                    <li>
+                        Appeler les fonctions nécéssaires a l'actualisation de la liste des utilisateur (initialiser, ajouter et supprimer)
+                    </li>
+                    <li>
+                        Ouvrir un nouvel onglet a la réception d'un message privé (si il n'est pas déjà ouvert)
+                    </li>
+                    <li>
+                        Actualiser les TextArea
+                    </li>
+                    <li>
+                        Rediriger les message aux onglets dédiés
+                    </li>
+                </ul>
+                <hr>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        btnConnexion.setOnAction(new EventHandler&#60ActionEvent&#62() {/*UN PAQUET DE CODE*/}
+                    </div>
+                </div>
+                <p>Contient toutes les instruction nécéssaires a la connexion</p>
+                <ul>
+                    <li>
+                        Vérifier que tout les champs de l'écran de connexion ont étés remplis
+                    </li>
+                    <li>
+                        Enregistrer les informations en cas de besoin
+                    </li>
+                    <li>
+                        Essayer de se connecter au serveur
+                    </li>
+                    <li>
+                        Créer un objet chat grace a la fonction creatConnexion(String nick, String login, String channel, String serveur, int port)
+                    </li>
+                    <li>
+                        Lancer le runable 
+                    </li>
+                    <li>
+                        Afficher l'écran de chargement
+                    </li>
+                </ul>
+                <hr>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        btnSend.setOnMouseClicked(new EventHandler&#60MouseEvent&#62() {/*UN PAQUET DE CODE*/}
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        txtSend.setOnKeyPressed(new EventHandler&#60KeyEvent&#62() {/*UN PAQUET DE CODE*/}
+                    </div>
+                </div>
+                Ces deux fonction ont le même effet mais sont activés avec deux objets différents<br>
+                Dans un premier temps avec le bouton envoyer, bouton bleu rond<br>
+                Dans un deuxième temps en appuyant sur la touche ENTREE lorsqu'on se situe dans la zone de saisie<br>
+                Ces fonctions :
+                <ul>
+                    <li>
+                        Adapter la requette (PRIVMSG) en fonction de l'onglet selectionné (log, channel, utilisateur)
+                    </li>
+                    <li>
+                        Envoyer le message au serveur
+                    </li>
+                    <li>
+                        Ajouter le message dans l'onglet courant
+                    </li>
+                </ul>
+                <hr>
+                <h2>Chat</h2>
+                 <p>Classe permettant de gérer la connexion au serveur, envoi et lit les messages du serveur, System nerveux du chat, l'interface avec l'éxterieur (le réseau et l'utilisateur). Contient la liste des utilisateurs ainsi que toutes les méthodes relative a sa création et son actualisation</p>
+                <hr>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        	private Chat(String serveur, int port, String channel, String nick) throws IOException {/*UN PAQUET DE CODE*/}
+                    </div>
+                </div>
+                <p>Crée un objet Chat contenant les information nécessaire la connexion et la communication avec le serveur et les autres utilisateurs, ainsi que les buffer servant a la connexion cia la réseau<br>
+                Lors de sa création, l'objet se connect au serveur en initialisant Socket, BufferedReader et BufferedWriter</p>
+                <hr>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        public static Chat createConnexion(String nick, String login, String channel, String serveur, int port)	throws IOException {/*UN PAQUET DE CODE*/}
+                    </div>
+                </div>
+                <p>Methode initialisant la connexion</p>
+                <ul>
+                    <li>
+                        Crée l'objet chat
+                    </li>
+                    <li>
+                        Se connecte au serveur
+                    </li>
+                    <li>
+                        Vérifie que le pseudo n'est pas déjà utilisé
+                    </li>
+                    <li>
+                        Rejoins le channel passé en paramètre
+                    </li>
+                    <li>
+                        Retourne l'objet Chat
+                    </li>
+                </ul>
+                <hr>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        public void sendMessage(String envoi) throws IOException {/*UN PAQUET DE CODE*/}
+                    </div>
+                </div>
+                <p>Envois le message passé en paramètre au channel sur lequel on s'est connecté</p>
+                <hr>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        public void sendPrivMessage(String message, String utilisateur) throws IOException {/*UN PAQUET DE CODE*/}
+                    </div>
+                </div>
+                <p>Envois le message passé en paramètre à l'utilisateur passé en paramètre</p>
+                <hr>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        public String read() throws IOException {/*UN PAQUET DE CODE*/}
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        Réponds au PING du serveur
+                    </li>
+                    <li>
+                        Renvois le message du serveur si ce n'est pas un ping
+                    </li>
+                </ul>
+                <hr>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        public void traitementUtilisateurs(String s) {/*UN PAQUET DE CODE*/}
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        Initialise  la liste des utilisateur (via la fonction addUtilisateur)
+                    </li>
+                    <li>
+                        Ajoute les utilisateur quand ils rejoignent le channel (via addUtilisateur)
+                    </li>
+                    <li>
+                        Suppression d'un utilisateur (via delUtilisateur)
+                    </li>
+                </ul>
+                <hr>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        public void addUltilisateur(String u) {/*UN PAQUET DE CODE*/}
+                    </div>
+                </div>
+                <p>Ajoute le nom de l'utilisateur passé en paramètre a la liste des utilisateurs</p>
+                <hr>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        public void delUtilisateur(String u) {/*UN PAQUET DE CODE*/}
+                    </div>
+                </div>
+                <p>Supprime de la liste d'utilisateur le nom de l'utilisateur passé en paramètre</p>
+                <hr>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        public void exit() throws IOException {/*UN PAQUET DE CODE*/}
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        Se déconnecte du serveur IRC via la commande "/quit"
+                    </li>
+                    <li>
+                        libere l'espace memoir du buffer
+                    </li>
+                    <li>
+                        Ferme le socket
+                    </li>
+                </ul>
+                <hr>
+                <h2>CustomTab</h2>
+                <p>Classe héritant de javafx.scene.control.Tab<br>
+                    Onglet amélioré dans lequel un a ajouté un TextArea ainsi qu'une methode pour y acceder
+                </p>
+                <h2>CustomTabPane</h2>
+                <p>Classe héritant de javafx.scene.control.TabPane<br>
+                    TabPane qui supporte l'ajout de CustomTab avec une methode qui permet la recherche d'onglet en fonction de leur nom 
+                </p>
+                <h1>Mes choix logiciels</h1>
+                <ul>
+                    <li>
+                        <h2>Le Runnable</h2>
+                        Le programme a d'abord été testé avec une boucle infini while(true) pour rafraichir le chat <br>
+                        Cette solution étant inefficace il a fallu chercher un moyen d'exécuter en parallèle thread main différentes fonction permettant d'actualiser le chat <br>
+                        C'est ainsi qu'interviens le runnable ainsi que l'executor, qui a pour but d'exécuter a la demande (infinie) le thread runnable. 
+                    </li>
+                    <li>
+                        <h2>Les onglets améliorés</h2>
+                        Nous avions besoin d'ajouter du texte à un onglet spécifique dont le nom été connu. Mais l'accès au contenu des onglets étant impossible, il a fallut créer une nouvelle classe héritant des propriétés de l'onglet, tout en y ajoutant un TextArea accessible. En constatant que l'ajout de ces onglet a un TabPane conventionnel, il a fallut créer une nouvelle classe héritant de TabPane et prenant en charge ces nouveaux onglet. Nous y avons ajouter des méthodes d'accès au onglets par nom, facilitant grandement le développement des fonctionnalités liées aux messages privés<br> 
+                        Au final, cela nous a permis de créer des onglet de discussion privée. 
+                        
+                        
+                    </li>
+                    <li>
+                        <h2>le CSS</h2>
+                        Le CSS est un choix en matière de design qui facilite la modification des propriétés graphique des éléments.<br>
+                        Toutes ces propriétés sont accessibles sans utiliser le CSS, mais c'est un choix qui facilite et accélère grandement le développement de l'interface utilisateur.
+                    </li>
+                    <li>
+                        <h2>L'arrayList Utilisateur et la ListView</h2>
+                        Au début, quand nous souhaitions afficher les utilisateurs, nous avons d'abord pensé a les afficher dans un simple TextArea. Mais cette solution ne nous offrant pas d'interaction avec cette liste, nous avons choisi de repenser la question. D'abord une idée est venue avec des labels contenant des nom des utilisateurs et des boutons pour ouvrir les onglets de discutions. Mais après quelques recherches, la ListView se révéla comme LA solution au problème. Elle gère les évènement souris ainsi que la sélection des évènement et nous permet donc de facilement mettre au point notre fonctionnalité. 
+                    </li>
+                    <li>
+                        <h2>Les Animation Java (TimeLines et KeyFrames)</h2>
+                        Les animations des boutons ont d'abord voulu être réalisées en CSS grâce a la propriété :hover. Cela s'étant révélé trop compliqué, beaucoup de solution et d'exemple d'animation en java se trouvaient sur Internet (notamment StackOverflow). S'est ainsi que nous avons choisi la solution TimeLine et KeyFrame pour réaliser nos animations. 
+                    </li>
+                    
+                    
+                </ul>
+                
+            </div>
+            </div>
+          </div>
+          <footer class="footer footer-dark">
+      <div class="container">
+        <h2>Projet BTS SIO - Chat IRC</h2>
+          <h3>SI56 Premiere année</h3>
+          <h2>Auteurs : Florian Le Merle et Aygalic Jara--Mikolajczak</h2>
+      </div>
+    </footer>
+      </body>
+</html>

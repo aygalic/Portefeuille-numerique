@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen" /> 
+    <link rel="stylesheet" type="text/css" href="css/css.css" media="screen" /> 
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+	$(document).ready(function() {
+		$('.js-scrollTo').on('click', function() { // Au clic sur un élément
+			var page = $(this).attr('href'); // Page cible
+			var speed = 750; // Durée de l'animation (en ms)
+			$('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+			return false;
+		});
+	});
+    </script>
+
+    
+    
+    
+    <meta charset="UTF-8">
+</head>
+<body>
+    <!-- La barre de navigation -->
+    <nav class="navbar  navbar-default navbar-fixed-top" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <p class="navbar-text navbar-left"><b>Documentation Technique</b></p>              
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="index.html">Acceuil</a>
+                    </li>
+                    <li>
+                        <a href="fonctionnalites.html">Fonctionnalités</a>
+                    </li>
+                    <li>
+                        <a href="technologies.html">Technologies</a>
+                    </li>
+                    <li>
+                        <a href="architecture.html">Architecture</a>
+                    </li>
+                    <li>
+                        <a href="prerequis.html">Prérequis</a>
+                    </li>
+                    <li>
+                        <a href="classes.html">Classes</a>
+                    </li>
+                    <li>
+                        <a href="retour.html">Retour sur experience</a>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+    </nav>
+    <div class="titrePrincipal">
+        <div class="container">
+            <div class="row">
+                <h1>TinyIRC</h1>
+                <h2>Documentation Technique</h2>
+                <a class="btn btn-primary btn-lg js-scrollTo" href="#index" role="button">En savoir plus<br><span class="glyphicon glyphicon-chevron-down"/></a>
+            </div>
+        </div>
+    </div>
+    <div class="index" id="index">
+        <div class="container">
+            <div class="row">
+                <h1>TinyIRC</h1>
+                <h2>Chat IRC au design minimaliste</h2>
+                <div class="thumbnail">
+                    <img src="img/Paper-Plane.png" alt="...">
+                    <div class="caption">
+                        <h3>Développé en JavaFX</h3>
+                        <h4>Application légere et facile d'utilisation</h4>
+                        Cette application a été développée dans le but de fournir a n'importe quel utilisateur, un client simple d'utilisation pour accéder rapidement a un serveur de chat IRC. L'IRC est un protocole de communication qui a fait ses preuves et qui est aujourd'hui un choix évident en matière de communication. Nous vous laissons lire la suite de cette documentation technique pour de plus amples informations sur le projet.<br>
+                        Le code source est disponible au téléchargement dans les liens ci dessous. Beaucoup d'informations sur le fonctionnement technique de l'application sont présentent dans la javaDoc alors n'hésitez pas. Nous vous souhaitons une bonne lecture ! :)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <div class="row">
+                        <h1>Sommaire :</h1>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>
+                                <h2><a href="index.html">Accueil</a></h2>
+                                Brève présentation du projet, index et téléchargement  
+                            </li>
+                            <li>
+                                <h2><a href="fonctionnalites.html">Fonctionnalités</a></h2>
+                                Présentation des différentes fonctionnalités de l'application  
+                            </li>
+                            <li>
+                                <h2><a href="technologies.html">Technologies</a></h2>
+                                Présentation des technologies utilisées pour développer l'application  
+                            </li>   
+                            <li>
+                                <h2><a href="architecture.html">Architecture</a></h2>
+                                Présentation de l'architecture physique et logique  
+                            </li>
+                            <li>
+                                <h2><a href="prerequis.html">Prérequis</a></h2>
+                                Installations nécessaire à l'exécution de l'application  
+                            </li>
+                            <li>
+                                <h2><a href="classes.html">Classes</a></h2>
+                                Explication de l'organisation du code, des choix techniques et des problèmes rencontrés lors du développement  
+                            </li>
+                            <li>
+                                <h2><a href="retour.html">Retour sur expérience</a></h2>
+                                Témoignage des développeurs de l'application et conclusion sur le projet  
+                            </li>
+                        </ul>  
+                    </div>
+                    <div class="row">
+                        <h1>Téléchargements :</h1>
+                        <div class="col-lg-6">
+                            
+                            
+                            <form method="get" action="TinyIRC.jar">
+                                <button  class="btn btn-success btn-fat" type="submit">Télécharger le jar</button>
+                            </form>
+                            <h2>Telecharger l'application seule sous forme de fichier executable</h2>
+                        </div>
+                        <div class="col-lg-6">
+                            <form method="get" action="TinyIRC.zip">
+                                <button  class="btn btn-success btn-fat" type="submit">Télécharger le projet</button>
+                            </form>
+                            <h2>Telecharger tout les fichiers du projet, l'application est incluse à la racine de l'archive</h2>
+                        </div>
+                    </div>
+
+                </div>
+            </div>  
+        </div>
+    </div>
+    <footer class="footer footer-dark">
+      <div class="container">
+        <h2>Projet BTS SIO - Chat IRC</h2>
+          <h3>SI56 Premiere année</h3>
+          <h2>Auteurs : Florian Le Merle et Aygalic Jara--Mikolajczak</h2>
+      </div>
+    </footer>
+</body>
+</html>
