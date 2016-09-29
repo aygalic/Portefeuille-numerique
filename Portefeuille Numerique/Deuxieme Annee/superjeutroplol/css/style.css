@@ -1,0 +1,42 @@
+@import 'https://fonts.googleapis.com/css?family=Ubuntu';
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+canvas {
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+
+}
+
+#crosshair1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 2px;
+    height: 10px;
+    z-index: 10;
+    background-color: white;
+}
+#crosshair2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 10px;
+    height: 2px;
+    z-index: 10;
+    background-color: white;
+}
+#amo {
+    position: absolute;
+    left: 90%;
+    top: 90%;
+    font-size: 40px;
+    color:white;
+    z-index: 10;
+    font-family: 'Ubuntu', sans-serif;
+}
