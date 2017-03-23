@@ -1,0 +1,44 @@
+PPE  
+	Reformulation des demandes :
+  
+L'inscription > Faire des insertions dans la base de données 
+  _  un moyen d'authentification a la base de donnée en fonction de l'adresse mail et du mot de passe 
+	?	Accès aux données de façon claire 
+	?	Recherche grouper d'une liste de licencier dans la base de donnée 
+	?	Les données seront séparées en 2  : Licencier / Staff 
+	?	insertion de formulaire spécifique concernant les licenciés dans la base de donnée et donc il faudra faire ressortir les données 
+  - Possibilité de créer une table qui gére les droits utilisateurs et les réaffiche sur l'application 
+  - Moyen de réinitialisation de la base de donnée de la base de données à chaque fin de saison d'un manire automatisé sans pour autant
+    Supprimer certaines informations qui devrons être gardées pour les saisons suivantes. Il faudra aussi par la même occasion, en fonction
+    de la date (1 saison = 1an) afficher la saison actuel sur l'application. 
+  - Par ailleurs, utiliser un moyens d'exportation de la base de donnée, mais aussi de récupérer les données d'un liencié et de les 
+    retranscrire sur un fichier au format PDF.
+  - L'application devra être capable de pouvoir envoyer des mails à l'aide d'un seveur SMTP (mail) il faut donc lier l'application à ce serveur.
+  - l'application devra comporter un moyen de recherche, en fonction des droits, vers la base de données pour pouvoir afficher les résultats voulus.
+  - L'application devra utiliser un moyen de compression en cohérence avec les logiciels compris sur le serveur.
+
+	Propositions : 
+
+En ce qui concerne la base de données, il faudra faire de grosses modifications sur l'anscienne base pour que les données puissent re
+être afficher de manière cohérentes. Cela va donc impliquer la création de nouvelles tables, et va donc demander beaucoup plus d'informations 
+que fournis dans le document. 
+
+L'application devra donc utiliser un moyen d'interprétation entre la base de données et le langage de l'application. Cela peut être réalisable par
+plusieurs langage :
+
+	- si l'application est orientée web, le php ou encore le java (pour le web) pourront être de bons moyens pour faire ressurgir les données, mais aussi
+	  pour la suppression, la modification et l'intertion. 
+	- si l'application est lourde, alors il y aura la possibilité de le faire dans beaucoup de langage voulu : python, java (app lourde), C,
+	  C# etc... 
+Toutes les demandes émisent pourront être réalisées à partir des langages décris plus haut, aussi bien pour la sélection d'un profil, d'une photos, 
+d'une réinitialisation de la base de données.... 
+
+Les droits utilisateurs pourront être géré depuis le langage à l'aide de la base de données (une table de privilèges pourrait être créé). 
+
+Celon le serveur SMTP et le langage, il y aura donc une posssibilité d'envoyer des mails à partir de l'application.
+
+Et donc un moyen de compression ou de restriction de la part du langage cible par rapport aux photos qui seront stockés sur le serveur.
+
+
+
+

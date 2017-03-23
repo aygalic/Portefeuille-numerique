@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../lib/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.13/datatables.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/datatables.min.js"></script>
+    <meta charset="utf-8"/>
+    <title>alljoueurs !</title>
+  </head>
+
+  <body>
+    <h1>Test Get All Joueurs</h1>
+    <p>on test</p>
+    <table id="documents_table" class="table table-hover">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Mail</th>
+          <th>Parents</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Petit test</td>
+          <td>encore un pti</td>
+          <td>final test</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+    <button id="button">getAllJoueurs</button>
+    <div id="result"></div>
+    <script type="text/javascript">
+    var table = $('#documents_table');
+    $(document).ready(function(){
+      $('#documents_table').DataTable({
+          "info":true,
+          "paging": true,
+          "searching": true,
+          "pageLength": 25,
+          "lengthChange": false,
+
+      });
+    });
+
+    $('#button').click(function(){
+      $.ajax({
+        type: 'GET',
+        url: "http://localhost/PhpServer/controller/joueurs",
+        traditional: true,
+        success: function(data){
+          table.DataTable().clear();
+          data = JSON.parse(data);
+          for (var x = 0; x < data.length; x++) {
+            table.DataTable().row.add([
+              data[x].nom_personne,
+              data[x].prenom_personne,
+              data[x].mail1_joueur,
+              "<div value="+ data[x].id_pere + "+" + data[x].id_mere + "><div id='parents'><button>parents</button></div></div>"
+            ]).draw();
+          }
+        }
+      });
+    });
+
+    $('body').on('click', '#parents', function() {
+      var idparents = $(this).parent().attr('value');
+      localStorage.setItem("idparents",idparents);
+      window.location.href = "http://localhost/PhpClient/view/parents.html";
+    });
+
+    </script>
+  </body>
+</html>
+<!--//bootstrap 4 alpha6 jquery-3.1.1-->

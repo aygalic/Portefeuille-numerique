@@ -1,0 +1,187 @@
+
+// DEBRIF 
+
+OK : 
+
+-> Création d’utilisateur : fait
+-> gestion des droits : fait 
+-> saisie des licences : fait 
+-> coordonnées : fait  
+-> Attestation de paiement : fait 
+-> Consultation financière : fait 
+-> 
+
+
+
+
+A FAIRE / REVOIR : 
+
+-> Suppression d’un licencié : à faire   ** LOUIS FAIT ? 
+-> Suivi sportif : à voir ( Abdeloumou ) 
+-> Photo : à tester ** 
+-> saisie des données financière : à faire (setpayment)* ALEX FAIT ? à Vérifier  
+-> Update saison : à avoir (Abdelmoumou)
+-> Mailing : tout les licencier ou seulement ceux inscrit sur la Newsletters
+-> génération de l’attestation de paiement *
+-> Exportation PDF ( Voir feuille )
+
+ 
+
+
+
+
+
+
+
+// CONCERNANT LA SAISON 
+
+
+La création d’une nouvelle saison devra se faire par une sauvegarde de la saison en cours et la création d’une base de données vierge de la saison à venir. 
+L’importation des coordonnées d’un licencié des saisons passées sera possible. Seules les données Coordonnées et photos sont à reprendre, les données financières et suivi sportif devront être initialisées à leur valeur par défaut. 
+L’ouverture de la base devra automatiquement afficher la saison en cours. La saison activée devra être clairement visible sur l’ensemble des interfaces. 
+La sélection d’une saison précédente doit être visible ! 
+
+
+-> 
+
+COTE SERVEUR DELIVRANT API (serveur 1)
+MODEL
+	Création de compte : recuperer un formulaire d'inscription,
+
+	reponse de création d'utilisateur
+	reponse gestion des droits
+	reponse Saisie des licences/ coordonnées/ photo
+	reponse Saisie des données financières/ Attestation de paiemen
+	reponse d'affichage des coordonnées
+	reponse d'affichage du suivi sportif
+	reponse d'affichage etat financier
+	reponse de suppression d'un licencier
+	reponse d'initialisation du saison
+
+	Exploitation des données :
+	reponse d'affichage Etat des paiements: Nom, prénom, montant attendu, montant payé, paiement complet
+	reponse d'affichage Annuaire simple: Nom, prénom, photo, numéro de licence, téléphone portable de contact
+	reponse d'affichage Annuaire complet: annuaire simple + coordonnées des parents, adresse mail
+
+
+
+
+
+
+
+CONTROLEUR
+
+
+COTE SERVEUR CLIENT API (serveur 2)
+
+Fonctions
+	Connection : Envoyer au serveur 1 mail et mdp hashé (md5)
+
+	GET de création d'utilisateur
+	GET gestion des droits
+	GET Saisie des licences/ coordonnées/ photo
+	GET Saisie des données financières/ Attestation de paiemen
+	GET d'affichage des coordonnées
+	GET d'affichage du suivi sportif
+	GET d'affichage etat financier
+	GET de suppression d'un licencier
+	GET d'initialisation du saison
+
+	Exploitation des données :
+	GET d'affichage Etat des paiements: Nom, prénom, montant attendu, montant payé, paiement complet
+	GET d'affichage Annuaire simple: Nom, prénom, photo, numéro de licence, téléphone portable de contact
+	GET d'affichage Annuaire complet: annuaire simple + coordonnées des parents, adresse mail
+
+
+
+VUE
+	index (connection
+	inscription création d'utilisateur
+	gestion des droits
+	Saisie des licences/ coordonnées/ photo
+	Saisie des données financières/ Attestation de paiemen
+	affichage des coordonnées
+	affichage du suivi sportif
+	affichage etat financier
+	suppression d'un licencier
+	initialisation du saison
+
+	Exploitation des données :
+	affichage Etat des paiements: Nom, prénom, montant attendu, montant payé, paiement complet
+	affichage Annuaire simple: Nom, prénom, photo, numéro de licence, téléphone portable de contact
+	affichage Annuaire complet: annuaire simple + coordonnées des parents, adresse mail
+
+
+CONTROLEUR
+	Gestion de l'acces et de l'affichage de différentes page en fonction du niveau de privileges récupérés a la connexion
+
+	PAGE ADMINISTRATEUR
+		Le mec peut tout faire et aller partout
+	PAGE DIRIGEANT
+		Saisie des licences/ coordonnées/ photo
+		affichage des coordonnées
+		affichage du suivi sportif
+		Exploitation des données
+
+	PAGE TRESORIER SECRETAIRE
+		Saisie des licences/ coordonnées/ photo
+		Saisie des données financières/ Attestation de paiemen
+		affichage des coordonnées
+		affichage du suivi sportif
+		affichage etat financier
+		suppression d'un licencier
+		Exploitation des données
+	PAGE LICENCIE VISITEUR
+		affichage des coordonnées
+		affichage du suivi sportif
+
+
+FONCTIONS POUR LE CONTROLLER :
+
+	addUser($username, $password, $email)*
+
+	getPrivilege($username, $password) -> return 0 (user n'existe pas) || return 1,n (privilège de l'user)
+
+	getLicence()* return $notes_licence, $date_licence, $cat_licence, $dirigeant_licence, $inscrisNewLetter_licence,
+	$licenceDistrictDispo_licence, $formation_licence, $renouv_licence, $id_joueur
+
+	addCoordonneePersonne($nom_personne, prenom_personne, $telPortable_personne, $telFixe_personne, $adresse_personne, $ville_personne, $codePostale_personne)
+
+	//Il n'y aura pas de get CoordoneePersonne car c'est de l'héritage en sql, donc il faut créer une fonction qui va prendre Personne en fonction de l'id représentant soit: le père, la mèr ou le joueur)
+	getLastIdPersonne() //cela va être une requête sql qui va faire un count de toutes les id de la table personne pour avoir le dernier id créer. Cela va donc faire un return $lastIdPersonne
+
+	addCoordonneePere($lastIdPersonne)
+
+	addCoordoneeMere($lastIdPersonne)
+
+	getLastIdMere() return lastIdMere
+
+	getLastIdPere() return lastIdPere
+
+	addCoordonneeJoueur($mail1_joueur, $mail2_joueur, $lastIdMere, $lastIdPere)
+
+	getCoordonneeJoueur($mail1_joueur, $mail2_joueur, $nom_personne, prenom_personne, $telPortable_personne, $telFixe_personne, $adresse_personne, $ville_personne, $codePostale_personne)
+
+	getCoordonneePere($nom_personne, prenom_personne, $telPortable_personne, $telFixe_personne, $adresse_personne, $ville_personne, $codePostale_personne)
+
+	getCoordonneeMere($nom_personne, prenom_personne, $telPortable_personne, $telFixe_personne, $adresse_personne, $ville_personne, $codePostale_personne)
+
+	getCoordoneeAll() return toutes les valeurs (à savoir père, mère et joueur)
+
+	//pour ajouter une image, je vais mettre au point un système avec un hash md5 histoire de pas upload plusieurs fois la photo
+	//cad que chaque image aura une signature propre à elle
+	
+
+	*addImage($Image_file, $name_file, $time_published)
+
+	*getImage() return ($Image_file, $name_file,  $_time_published)
+
+ 	*addDonneeFinanciere($noteFinanciere_payement, $sommeAPayer_payement, $sommePayer_payement, $demandeAttFinancier_licence, $demandeDeCotiFinancier_licence,$numChequeFinancier_licence, $paiementComplet_payement, $depotBanque_payement)
+
+	*getDonneFinanciere() return $noteFinanciere_payement, $sommeAPayer_payement, $sommePayer_payement, $demandeAttFinancier_licence, $demandeDeCotiFinancier_licence,
+	$numChequeFinancier_licence, $paiementComplet_payement, $depotBanque_payement
+
+//Je stop pour ce soir
+
+
+

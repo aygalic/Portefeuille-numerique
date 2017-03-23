@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Admin</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+		Utilisateur :<input type="text" placeholder="utilisateur" id="user"name="utilisateur"/><br>
+		Niveau Droit : <input type="text" placeholder="niveau du Droit" id="nivDroit" name="niveauDroit"/><br>
+		<button id="ajax">ajax call</button>
+<script type="text/javascript">	
+	$('#ajax').click(function(){ 
+		var user=$('#user').val();
+		var nivDroit=$('#nivDroit').val();
+		$.ajax({ 
+			type: "GET",
+			//dataType: "jsonp",
+			url: "http://localhost/tpRestServer/utilisateurs?id="+user+'&login='+nivDroit,
+			success: function(data){        
+				$("#result").html(data);
+			}
+		});
+	});
+	</script>
+	<div id="result"></div>
+</body>
+</html> 
+
+

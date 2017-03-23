@@ -1,0 +1,42 @@
+<script
+src="https://code.jquery.com/jquery-3.1.1.min.js"
+integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+crossorigin="anonymous">
+</script>
+<script src="../lib/js/main.js"></script>
+
+<h1>Test Get Licence</h1>
+tu cherches un joueur, entre son id >o>
+<form>
+  <input id="idjoueur" placeholder="entre ton id mon ami">
+</form>
+<button id="button">press moi</button>
+<div id="result"></div>
+<script type="text/javascript">
+$('#button').click(function(){
+  var id=$('#idjoueur').val();
+  $.ajax({
+    type: 'GET',
+    url: "http://localhost/PhpServer/controller/utilisateur/licence/" + id,
+    traditional: true,
+    success: function(data){
+      alert('work !');
+      $("#result").html(data);
+    }
+  });
+});
+
+
+
+/*$('#button').click(function(){
+  var id=$('#idjoueur').val();
+  var url= "http://localhost/PhpServer/controller/utilisateur/licence/" + id;
+  $.getJSON(url, function(result){
+    $.each(result, function(i, field){
+      if(isNaN(i))
+      $("#result").append(i + ": " +field + "<br>");
+    });
+    $("#result").append("<hr>");
+  });
+});*/
+</script>

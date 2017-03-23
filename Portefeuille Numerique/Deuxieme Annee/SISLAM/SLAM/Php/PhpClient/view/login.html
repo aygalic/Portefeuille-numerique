@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<meta charset="utf-8"/>
+
+</head>
+<body>
+	
+		Votre adresse mail :<input type="mail" placeholder="Votre email" id="mail" name="mail"/><br>
+		Votre login :<input type="text" placeholder="Votre login" id="login"name="login"/><br>
+		Votre mot de passe : <input type="password" placeholder="Votre mot de passe" id="password" name="pass"/><br>
+		<button id="ajax">ajax call</button>
+	<script type="text/javascript">	
+	$('#ajax').click(function(){ 
+		var mail=$('#mail').val();
+		var login=$('#login').val();
+		var password=$('#password').val();
+		$.ajax({ 
+			type: "GET",
+			//dataType: "jsonp",
+			url: "http://localhost/tpRestServer/utilisateurs?id="+mail+'&login='+login+"&password="+password,
+			success: function(data){        
+				$("#result").html(data);
+			}
+		});
+	});
+	</script>
+	<div id="result"></div>
+
+</body>
+</html>
