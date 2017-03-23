@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2016-09-17" view-index="0" gantt-divider-location="353" resource-divider-location="300" version="2.8.1" locale="fr">
+    <description/>
+    <view zooming-state="default:2" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="200" order="0"/>
+        <field id="tpd4" name="Date de début" width="76" order="1"/>
+        <field id="tpd5" name="Date de fin" width="75" order="2"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nom" width="211" order="0"/>
+        <field id="1" name="Rôle par défaut" width="87" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Prestation OVH" color="#8cb6ce" meeting="false" start="2016-09-30" duration="1" complete="0" expand="true">
+            <depend id="1" type="2" difference="0" hardness="Strong"/>
+            <depend id="19" type="2" difference="0" hardness="Strong"/>
+            <depend id="23" type="2" difference="0" hardness="Strong"/>
+            <depend id="26" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="1" name="L.A.M.P." color="#8cb6ce" meeting="false" start="2016-10-03" duration="1" complete="0" expand="true">
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="5" name="LDAP" color="#8cb6ce" meeting="false" start="2016-10-04" duration="5" complete="0" expand="true">
+            <depend id="30" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="19" name="Configuration iptables (?)" color="#8cb6ce" meeting="false" start="2016-10-03" duration="1" complete="0" expand="true"/>
+        <task id="23" name="FTP" color="#8cb6ce" meeting="false" start="2016-10-03" duration="2" complete="0" expand="true"/>
+        <task id="26" name="Création et config base de donnée" color="#8cb6ce" meeting="false" start="2016-10-03" duration="2" complete="0" expand="true">
+            <depend id="33" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="33" name="Création du MVC" color="#8cb6ce" meeting="false" start="2016-10-05" duration="3" complete="0" expand="true">
+            <depend id="39" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="39" name="Rendu de l'app et finalisation" color="#8cb6ce" meeting="false" start="2016-10-10" duration="2" complete="0" expand="true"/>
+        <task id="30" name="Test qualité" color="#8cb6ce" meeting="false" start="2016-10-11" duration="1" complete="0" expand="true"/>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+</project>

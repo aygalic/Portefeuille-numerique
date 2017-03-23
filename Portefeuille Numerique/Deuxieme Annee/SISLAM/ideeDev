@@ -1,0 +1,30 @@
+Coté applicatif 
+-Mise en place de la base de donnée
+
+ARCHITECTURE BASEE WEB
+ 
+-Mise en place de l'architecture MVC : Model View Controller 
+
+Model :
+	-Fonction:
+		-Connection Base de donnée
+		-Ajout/suppression utilisateur
+		-Affichage des donnée 
+		-Mailling
+
+Controleur :
+	
+	-Gestion des privilèges
+		-Retourne la vue approprié en focntion du niveau de privilège (affichage de l'interface utilisateur et fait le liens avec les fonction)
+		
+
+Vue : 
+	-Préparation de l'interface utilisateur	
+	
+
+
+
+
+Idée a chier : 
+Mode hors ligne : personne ne travail hors ligne en 2015. Cela ajoute beaucoup de contrainte au développement pour une futilité.
+Netoyage annuel de la base de donnée avec sauvegarde : Ca n'a aucun interet, ni pour l'utilisateur, ni pour le développeur 

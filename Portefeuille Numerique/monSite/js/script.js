@@ -1,9 +1,7 @@
 $(document).ready(function(){
+        //$('.collapse').collapse();
+        //var a =$('body').offset().top + $('.projets').offset().top;
+        //$('.img-porteF').css("top", a.toString()+"px");
 
-    
-        // Scroll the whole document
-        $('#link1').localScroll({target:'#tab'});
-        $('#navbar').localScroll({target:'#project'});
-        $('#navbar').localScroll({target:'#veille'});
 
 });
